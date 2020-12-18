@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departamento1s</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departamento1s.each do |departamento1| %>
+      <tr>
+        <td><%= departamento1.nome %></td>
+        <td><%= link_to 'Show', departamento1.nome %></td>
+        <td><%= link_to 'Edit', edit_departamento1_path(departamento1) %></td>
+        <td><%= link_to 'Destroy', departamento1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Departamento1', new_departamento1_path %>
