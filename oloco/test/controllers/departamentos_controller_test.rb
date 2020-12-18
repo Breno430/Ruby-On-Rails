@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class DepartamentosControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -17,7 +17,7 @@ class DepartamentosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create departamento" do
     assert_difference('Departamento.count') do
-      post departamentos_url, params: { departamento: {  } }
+      post departamentos_url, params: { departamento: { nome: @departamento.nome } }
     end
 
     assert_redirected_to departamento_url(Departamento.last)
@@ -34,7 +34,7 @@ class DepartamentosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update departamento" do
-    patch departamento_url(@departamento), params: { departamento: {  } }
+    patch departamento_url(@departamento), params: { departamento: { nome: @departamento.nome } }
     assert_redirected_to departamento_url(@departamento)
   end
 

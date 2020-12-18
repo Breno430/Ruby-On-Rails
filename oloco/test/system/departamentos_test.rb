@@ -14,6 +14,7 @@ class DepartamentosTest < ApplicationSystemTestCase
     visit departamentos_url
     click_on "New Departamento"
 
+    fill_in "Nome", with: @departamento.nome
     click_on "Create Departamento"
 
     assert_text "Departamento was successfully created"
@@ -24,6 +25,7 @@ class DepartamentosTest < ApplicationSystemTestCase
     visit departamentos_url
     click_on "Edit", match: :first
 
+    fill_in "Nome", with: @departamento.nome
     click_on "Update Departamento"
 
     assert_text "Departamento was successfully updated"
