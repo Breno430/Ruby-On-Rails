@@ -1,17 +1,11 @@
-<html>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<%= nav_bar brand: "Loja", brand_link: root_url %>
-<div class="container">
-<body>
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-    <thead>
+<table class="table table-bordered table-hover">
+  <thead>
         <tr>
             <td>Nome</td>
             <td>Descrição</td>
             <td>Preço</td>
             <td>Quantidade</td>
+            <td colspan="1">
         </tr>
         </thead>
         <tbody>
@@ -21,12 +15,13 @@
             <td><%= produto.descricao %></td>
             <td><%= produto.preco %></td>
             <td><%= produto.quantidade %></td>
+          <td><%= button_to "Remover", produto, method: :delete,class:"btn btn-danger", data: {confirm: "Tem certeza que deseja remover #{produto.nome}?"} %></td>
         </tr>
           <% end %>
         </tbody>
 </table>
 <h3> Produtos com desconto </h3>
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="table table-bordered table-hover">
   <thead>
   <tr>
     <td>Nome</td>
@@ -46,6 +41,3 @@
   <% end %>
   </tbody>
 </table>
-</body>
-</div>
-</html>
